@@ -1,0 +1,22 @@
+{
+  "name": "react-hybrid-starter",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wearzdk",
+  "license": "MIT",
+  "devDependencies": {
+    "@antfu/eslint-config": "^1.1.0",
+    "@types/node": "^18.15.11",
+    "eslint": "^8.53.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "typescript": "^5.2.2"
+  }
+}

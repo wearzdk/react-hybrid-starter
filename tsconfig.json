@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "jsx": "react-jsx",
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "~wechat/*": [
+        "packages/wechat-ui/src/*"
+      ],
+      "~model/*": [
+        "packages/model/src/*"
+      ],
+      "~shared/*": [
+        "packages/shared/*"
+      ],
+      "~types/*": [
+        "packages/types/*"
+      ]
+    },
+    "strict": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "skipDefaultLibCheck": true,
+    "noEmit": true,
+    "skipLibCheck": true
+  },
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "exclude": [
+    "node_modules",
+    "packages/model/*",
+    "packages/**/node_modules",
+    "packages/**/dist"
+  ]
+}

@@ -1,0 +1,9 @@
+@unocss;
+
+body .taro-checkbox_checked {
+  @apply w-3 h-3 border-2 text-white text-base rounded top-0;
+}
+
+body .taro-checkbox_checked:checked {
+  @apply bg-black;
+}
