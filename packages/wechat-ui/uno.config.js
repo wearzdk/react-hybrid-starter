@@ -1,6 +1,5 @@
 import presetIcons from '@unocss/preset-icons'
-import transformerDirectives from '@unocss/transformer-directives'
-import { defineConfig, presetUno } from 'unocss'
+import { defineConfig } from 'unocss'
 import presetWeapp from 'unocss-preset-weapp'
 import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 
@@ -32,20 +31,20 @@ const themes = {
   },
 }
 
-const prefix = 'li-'
+// const prefix = 'li-'
 
 const { presetWeappAttributify, transformerAttributify } = extractorAttributify({
-  classPrefix: prefix,
+  // classPrefix: prefix,
 })
 
 export default defineConfig({
   presets: [
-    presetUno(),
     presetWeapp({
-      prefix,
+      // h5兼容
       // eslint-disable-next-line node/prefer-global/process
       isH5: process.env.TARO_ENV === 'h5',
       platform: 'taro',
+      taroWebpack: 'webpack5',
     }),
     presetIcons({
       prefix: 'i-',
@@ -57,9 +56,6 @@ export default defineConfig({
   transformers: [
     transformerAttributify(),
     transformerClass(),
-    transformerDirectives({
-      enforce: 'pre',
-    }),
   ],
   theme: {
     colors: {
@@ -76,8 +72,5 @@ export default defineConfig({
       fill2: '#F2F2F2',
       fill3: '#EDEDED',
     },
-  },
-  shortcuts: {
-    input: 'w-full h-8 px-2 border bg-fill2 border-border rounded focus:outline-none focus:ring-1 focus:ring-primary',
   },
 })

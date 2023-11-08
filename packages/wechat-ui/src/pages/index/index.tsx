@@ -1,8 +1,8 @@
-import { Button, Checkbox, Icon, Text, Textarea, View } from '@tarojs/components'
+import { Button, Checkbox, Text, Textarea, View } from '@tarojs/components'
 import './index.css'
-import '~wechat/components/checkbox.css'
+
+// import '~wechat/components/checkbox.css'
 import { useEffect, useRef, useState } from 'react'
-import { useClickOutside } from '@reactuses/core'
 import { showModal, showToast } from '@tarojs/taro'
 import type { ITodo } from '~model/dao/todo'
 import { Api } from '~wechat/api/trpc'
@@ -117,7 +117,7 @@ export default function Index() {
           Todo List
         </Text>
         <Button onClick={handelAddNew} className="w-80px h-80px m-0 p-0 shadow flex items-center justify-center">
-          <Icon type="info" className="i-mdi-plus" size="22"></Icon>
+          <Text className="i-mdi-plus text-44px"></Text>
         </Button>
 
       </View>
@@ -154,16 +154,21 @@ interface ITodoItemProps {
 function TodoItem(props: ITodoItemProps) {
   const { item, onDelete, onEdit, onToggle } = props
   return (
-    <View className="flex justify-between items-center px-3 py-4 mb-3 bg-fill1 border-border border-2px shadow rounded-15px">
+    <View className="flex justify-between items-center px-3 py-4 mb-3 bg-white border-2px shadow rounded-15px">
       {/* 是否完成 */}
-      <Checkbox className="children:w-20px" onClick={() => onToggle(item)} checked={item.done} value=""></Checkbox>
+      <Checkbox
+        onClick={() => onToggle(item)}
+        checked={item.done}
+        value=""
+      >
+      </Checkbox>
       {/* 文本 */}
-      <Text onClick={() => onEdit(item)} className="text-text1 text-xl">{item.text}</Text>
+      <Text onClick={() => onEdit(item)} className="text-xl text-text1">{item.text}</Text>
       <Button
         onClick={() => onDelete(item)}
         className="w-80px h-80px m-0 p-0 border-0 flex items-center bg-transparent justify-center"
       >
-        <Icon className="i-mdi-delete-outline text-danger" size="20" type="warn"></Icon>
+        <Text className="i-mdi-delete-outline text-danger text-44px"></Text>
       </Button>
     </View>
   )
@@ -178,17 +183,23 @@ interface modalProps {
 
 function Modal(props: modalProps) {
   const modalRef = useRef<HTMLDivElement>(null)
-  useClickOutside(modalRef, () => {
-    console.log('click outside')
 
+  function handelClickOverlay() {
     props.onClose()
-  })
+  }
+
   return (
     <>
       {
       props.visible && (
-        <View className="fixed z-30 top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-          <View ref={modalRef} className={`${props.className} w-auto h-auto bg-white rounded-15px shadow`}>
+        <View className="fixed z-30 top-0 left-0 w-full h-full flex items-center justify-center">
+          {/* overlay */}
+          <View
+            onClick={handelClickOverlay}
+            className="fixed top-0 left-0 w-full h-full bg-black opacity-50"
+          >
+          </View>
+          <View ref={modalRef} className={`${props.className} w-auto h-auto z-10 bg-white rounded-15px shadow`}>
             {props.children}
           </View>
         </View>

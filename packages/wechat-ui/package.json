@@ -30,8 +30,8 @@
   },
   "browserslist": [
     "last 3 versions",
-    "Android >= 7.1",
-    "ios >= 10"
+    "Android >= 4.1",
+    "ios >= 8"
   ],
   "author": "",
   "dependencies": {

@@ -3,8 +3,6 @@ import type { PropsWithChildren } from 'react'
 
 import 'uno.css'
 
-import '@unocss/reset/tailwind.css'
-
 import './app.css'
 
 function App({ children }: PropsWithChildren<any>) {
