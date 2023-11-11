@@ -97,7 +97,7 @@ export default function Index() {
             onInput={(e) => {
               setCurrentTodo({
                 ...currentTodo,
-                text: e.detail.value,
+                text: (e.target as any).value,
               })
             }}
             className="w-full h-200px text-base my-2 p-2 border border-border"

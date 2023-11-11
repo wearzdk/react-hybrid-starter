@@ -20,9 +20,6 @@ importers:
       eslint-plugin-react-hooks:
         specifier: ^4.6.0
         version: registry.npmmirror.com/eslint-plugin-react-hooks@4.6.0(eslint@8.53.0)
-      eslint-plugin-react-refresh:
-        specifier: ^0.4.4
-        version: registry.npmmirror.com/eslint-plugin-react-refresh@0.4.4(eslint@8.53.0)
       typescript:
         specifier: ^5.2.2
         version: registry.npmmirror.com/typescript@5.2.2
@@ -51,15 +48,15 @@ importers:
 
   packages/shared:
     devDependencies:
+      '@preact/compat':
+        specifier: ^17.1.2
+        version: registry.npmmirror.com/@preact/compat@17.1.2(preact@10.18.0)
       '@reactuses/core':
         specifier: ^4.0.10
         version: registry.npmmirror.com/@reactuses/core@4.0.10(react@18.2.0)
-      react:
-        specifier: ^18.0.0
-        version: registry.npmmirror.com/react@18.2.0
-      react-dom:
-        specifier: ^18.0.0
-        version: registry.npmmirror.com/react-dom@18.2.0(react@18.2.0)
+      preact:
+        specifier: 10.18.0
+        version: registry.npmmirror.com/preact@10.18.0
 
   packages/types: {}
 
@@ -71,6 +68,9 @@ importers:
       '@hybrid/server':
         specifier: workspace:*
         version: link:../server
+      '@preact/compat':
+        specifier: ^17.1.2
+        version: registry.npmmirror.com/@preact/compat@17.1.2(preact@10.18.0)
       '@tarojs/components':
         specifier: 3.6.18
         version: registry.npmmirror.com/@tarojs/components@3.6.18(@types/react@18.2.36)(postcss@8.4.31)(react@18.2.0)
@@ -79,7 +79,7 @@ importers:
         version: registry.npmmirror.com/@tarojs/helper@3.6.18
       '@tarojs/plugin-framework-react':
         specifier: ^3.6.18
-        version: registry.npmmirror.com/@tarojs/plugin-framework-react@3.6.18(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@types/react@18.2.36)(postcss@8.4.31)(react-refresh@0.14.0)(react@18.2.0)
+        version: registry.npmmirror.com/@tarojs/plugin-framework-react@3.6.18(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@types/react@18.2.36)(postcss@8.4.31)(preact@10.18.0)(react-refresh@0.14.0)(react@18.2.0)
       '@tarojs/plugin-platform-h5':
         specifier: 3.6.18
         version: registry.npmmirror.com/@tarojs/plugin-platform-h5@3.6.18(@types/react@18.2.36)(postcss@8.4.31)
@@ -98,12 +98,9 @@ importers:
       '@tarojs/taro':
         specifier: 3.6.18
         version: registry.npmmirror.com/@tarojs/taro@3.6.18(@types/react@18.2.36)(postcss@8.4.31)
-      react:
-        specifier: ^18.2.0
-        version: registry.npmmirror.com/react@18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: registry.npmmirror.com/react-dom@18.2.0(react@18.2.0)
+      preact:
+        specifier: 10.18.0
+        version: registry.npmmirror.com/preact@10.18.0
     devDependencies:
       '@babel/core':
         specifier: ^7.23.2
@@ -125,7 +122,7 @@ importers:
         version: registry.npmmirror.com/@tarojs/taro-loader@3.6.18(@types/react@18.2.36)(postcss@8.4.31)
       '@tarojs/webpack5-runner':
         specifier: 3.6.18
-        version: registry.npmmirror.com/@tarojs/webpack5-runner@3.6.18(@babel/core@7.23.2)(@swc/core@1.3.23)(@types/react@18.2.36)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)(webpack@5.78.0)
+        version: registry.npmmirror.com/@tarojs/webpack5-runner@3.6.18(@babel/core@7.23.2)(@swc/core@1.3.23)(@types/react@18.2.36)(postcss@8.4.31)(react@18.2.0)(typescript@5.2.2)(webpack@5.78.0)
       '@trpc/client':
         specifier: ^10.43.1
         version: registry.npmmirror.com/@trpc/client@10.43.1(@trpc/server@10.43.1)
@@ -2599,6 +2596,16 @@ packages:
     version: 1.0.0-next.23
     dev: true
 
+  registry.npmmirror.com/@preact/compat@17.1.2(preact@10.18.0):
+    resolution: {integrity: sha512-7pOZN9lMDDRQ+6aWvjwTp483KR8/zOpfS83wmOo3zfuLKdngS8/5RLbsFWzFZMGdYlotAhX980hJ75bjOHTwWg==, tarball: https://registry.npmmirror.com/@preact/compat/-/compat-17.1.2.tgz}
+    id: registry.npmmirror.com/@preact/compat/17.1.2
+    name: '@preact/compat'
+    version: 17.1.2
+    peerDependencies:
+      preact: '*'
+    dependencies:
+      preact: registry.npmmirror.com/preact@10.18.0
+
   registry.npmmirror.com/@reactuses/core@4.0.10(react@18.2.0):
     resolution: {integrity: sha512-QpAp/jvzLpDMq+coeJFDldjxhyqlnEn8Tb/OsChCbW2A0fjtQDGidh0ZqjnObSzIi08el4BuSQxy5/u36vhRrw==, tarball: https://registry.npmmirror.com/@reactuses/core/-/core-4.0.10.tgz}
     id: registry.npmmirror.com/@reactuses/core/4.0.10
@@ -3197,7 +3204,7 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/@tarojs/plugin-framework-react@3.6.18(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@types/react@18.2.36)(postcss@8.4.31)(react-refresh@0.14.0)(react@18.2.0):
+  registry.npmmirror.com/@tarojs/plugin-framework-react@3.6.18(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@types/react@18.2.36)(postcss@8.4.31)(preact@10.18.0)(react-refresh@0.14.0)(react@18.2.0):
     resolution: {integrity: sha512-SBmyfYDu4Ehj7kXX4LdrD/EZO3qPqEo0usiatj6KEMFv7VR/LxUUvyHs2hkdVpFYniVNBeHskuob8WuE5aLPqw==, tarball: https://registry.npmmirror.com/@tarojs/plugin-framework-react/-/plugin-framework-react-3.6.18.tgz}
     id: registry.npmmirror.com/@tarojs/plugin-framework-react/3.6.18
     name: '@tarojs/plugin-framework-react'
@@ -3228,6 +3235,7 @@ packages:
       acorn: registry.npmmirror.com/acorn@8.11.2
       acorn-walk: registry.npmmirror.com/acorn-walk@8.3.0
       lodash: registry.npmmirror.com/lodash@4.17.21
+      preact: registry.npmmirror.com/preact@10.18.0
       react: registry.npmmirror.com/react@18.2.0
       react-refresh: registry.npmmirror.com/react-refresh@0.14.0
     transitivePeerDependencies:
@@ -3239,7 +3247,7 @@ packages:
       - vue
     dev: false
 
-  registry.npmmirror.com/@tarojs/plugin-platform-alipay@3.6.18(@types/react@18.2.36)(postcss@8.4.31)(react@18.2.0):
+  registry.npmmirror.com/@tarojs/plugin-platform-alipay@3.6.18(@types/react@18.2.36)(postcss@8.4.31):
     resolution: {integrity: sha512-GlDtbJJFmjKLq/B0VdV95LsfzylAqOVc6I7ib3qe9e4ZrL+PdGIlfm1R5w7rSfAsmbxwj1WxBvmY7PBBqqqjhg==, tarball: https://registry.npmmirror.com/@tarojs/plugin-platform-alipay/-/plugin-platform-alipay-3.6.18.tgz}
     id: registry.npmmirror.com/@tarojs/plugin-platform-alipay/3.6.18
     name: '@tarojs/plugin-platform-alipay'
@@ -3254,7 +3262,6 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
-      - react
       - supports-color
       - vue
     dev: true
@@ -3557,7 +3564,7 @@ packages:
       - vue
     dev: true
 
-  registry.npmmirror.com/@tarojs/webpack5-runner@3.6.18(@babel/core@7.23.2)(@swc/core@1.3.23)(@types/react@18.2.36)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)(webpack@5.78.0):
+  registry.npmmirror.com/@tarojs/webpack5-runner@3.6.18(@babel/core@7.23.2)(@swc/core@1.3.23)(@types/react@18.2.36)(postcss@8.4.31)(react@18.2.0)(typescript@5.2.2)(webpack@5.78.0):
     resolution: {integrity: sha512-BYt178vICazDRtNCXMZlmHq4EPWCkSfopIfMsyy/VgtU4Bc6ioRr5ebOxHaM9ACC79yqmtSZ6WUGFUF6XKEVcg==, tarball: https://registry.npmmirror.com/@tarojs/webpack5-runner/-/webpack5-runner-3.6.18.tgz}
     id: registry.npmmirror.com/@tarojs/webpack5-runner/3.6.18
     name: '@tarojs/webpack5-runner'
@@ -3568,7 +3575,7 @@ packages:
     dependencies:
       '@parcel/css': registry.npmmirror.com/@parcel/css@1.14.0
       '@tarojs/helper': registry.npmmirror.com/@tarojs/helper@3.6.18
-      '@tarojs/plugin-platform-alipay': registry.npmmirror.com/@tarojs/plugin-platform-alipay@3.6.18(@types/react@18.2.36)(postcss@8.4.31)(react@18.2.0)
+      '@tarojs/plugin-platform-alipay': registry.npmmirror.com/@tarojs/plugin-platform-alipay@3.6.18(@types/react@18.2.36)(postcss@8.4.31)
       '@tarojs/plugin-platform-jd': registry.npmmirror.com/@tarojs/plugin-platform-jd@3.6.18(@types/react@18.2.36)(postcss@8.4.31)
       '@tarojs/plugin-platform-qq': registry.npmmirror.com/@tarojs/plugin-platform-qq@3.6.18(@types/react@18.2.36)(postcss@8.4.31)
       '@tarojs/plugin-platform-swan': registry.npmmirror.com/@tarojs/plugin-platform-swan@3.6.18(@types/react@18.2.36)(postcss@8.4.31)
@@ -3623,7 +3630,7 @@ packages:
       terser-webpack-plugin: registry.npmmirror.com/terser-webpack-plugin@5.3.9(@swc/core@1.3.23)(esbuild@0.14.54)(webpack@5.78.0)
       url-loader: registry.npmmirror.com/url-loader@4.1.0(file-loader@6.0.0)(webpack@5.78.0)
       vm2: registry.npmmirror.com/vm2@3.9.19
-      vue-loader: registry.npmmirror.com/vue-loader@15.11.1(css-loader@6.8.1)(lodash@4.17.21)(react-dom@18.2.0)(react@18.2.0)(webpack@5.78.0)
+      vue-loader: registry.npmmirror.com/vue-loader@15.11.1(css-loader@6.8.1)(lodash@4.17.21)(react@18.2.0)(webpack@5.78.0)
       webpack: registry.npmmirror.com/webpack@5.78.0(@swc/core@1.3.23)
       webpack-chain: registry.npmmirror.com/webpack-chain@6.5.1
       webpack-dev-server: registry.npmmirror.com/webpack-dev-server@4.11.1(webpack@5.78.0)
@@ -4725,13 +4732,13 @@ packages:
       '@vue/shared': registry.npmmirror.com/@vue/shared@3.3.7
     dev: true
 
-  registry.npmmirror.com/@vue/component-compiler-utils@3.3.0(lodash@4.17.21)(react-dom@18.2.0)(react@18.2.0):
+  registry.npmmirror.com/@vue/component-compiler-utils@3.3.0(lodash@4.17.21)(react@18.2.0):
     resolution: {integrity: sha512-97sfH2mYNU+2PzGrmK2haqffDpVASuib9/w2/noxiFi31Z54hW+q3izKQXXQZSNhtiUpAI36uSuYepeBe4wpHQ==, tarball: https://registry.npmmirror.com/@vue/component-compiler-utils/-/component-compiler-utils-3.3.0.tgz}
     id: registry.npmmirror.com/@vue/component-compiler-utils/3.3.0
     name: '@vue/component-compiler-utils'
     version: 3.3.0
     dependencies:
-      consolidate: registry.npmmirror.com/consolidate@0.15.1(lodash@4.17.21)(react-dom@18.2.0)(react@18.2.0)
+      consolidate: registry.npmmirror.com/consolidate@0.15.1(lodash@4.17.21)(react@18.2.0)
       hash-sum: registry.npmmirror.com/hash-sum@1.0.2
       lru-cache: registry.npmmirror.com/lru-cache@4.1.5
       merge-source-map: registry.npmmirror.com/merge-source-map@1.1.0
@@ -6341,7 +6348,7 @@ packages:
     engines: {node: ^14.18.0 || >=16.10.0}
     dev: true
 
-  registry.npmmirror.com/consolidate@0.15.1(lodash@4.17.21)(react-dom@18.2.0)(react@18.2.0):
+  registry.npmmirror.com/consolidate@0.15.1(lodash@4.17.21)(react@18.2.0):
     resolution: {integrity: sha512-DW46nrsMJgy9kqAbPt5rKaCr7uFtpo4mSUvLHIUbJEjm0vo+aY5QLwBUq3FK4tRnJr/X0Psc0C4jf/h+HtXSMw==, tarball: https://registry.npmmirror.com/consolidate/-/consolidate-0.15.1.tgz}
     id: registry.npmmirror.com/consolidate/0.15.1
     name: consolidate
@@ -6513,7 +6520,6 @@ packages:
       bluebird: registry.npmmirror.com/bluebird@3.7.2
       lodash: registry.npmmirror.com/lodash@4.17.21
       react: registry.npmmirror.com/react@18.2.0
-      react-dom: registry.npmmirror.com/react-dom@18.2.0(react@18.2.0)
     dev: true
 
   registry.npmmirror.com/constant-case@3.0.4:
@@ -6988,6 +6994,7 @@ packages:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==, tarball: https://registry.npmmirror.com/debug/-/debug-3.2.7.tgz}
     name: debug
     version: 3.2.7
+    requiresBuild: true
     peerDependencies:
       supports-color: '*'
     peerDependenciesMeta:
@@ -8273,17 +8280,6 @@ packages:
     engines: {node: '>=10'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
-    dependencies:
-      eslint: registry.npmmirror.com/eslint@8.53.0
-    dev: true
-
-  registry.npmmirror.com/eslint-plugin-react-refresh@0.4.4(eslint@8.53.0):
-    resolution: {integrity: sha512-eD83+65e8YPVg6603Om2iCIwcQJf/y7++MWm4tACtEswFLYMwxwVWAfwN+e19f5Ad/FOyyNg9Dfi5lXhH3Y3rA==, tarball: https://registry.npmmirror.com/eslint-plugin-react-refresh/-/eslint-plugin-react-refresh-0.4.4.tgz}
-    id: registry.npmmirror.com/eslint-plugin-react-refresh/0.4.4
-    name: eslint-plugin-react-refresh
-    version: 0.4.4
-    peerDependencies:
-      eslint: '>=7'
     dependencies:
       eslint: registry.npmmirror.com/eslint@8.53.0
     dev: true
@@ -13277,6 +13273,11 @@ packages:
       picocolors: registry.npmmirror.com/picocolors@1.0.0
       source-map-js: registry.npmmirror.com/source-map-js@1.0.2
 
+  registry.npmmirror.com/preact@10.18.0:
+    resolution: {integrity: sha512-O4dGFmErPd3RNVDvXmCbOW6hetnve6vYtjx5qf51mCUmBS96s66MrNQkEII5UThDGoNF7953ptA+aNupiDxVeg==, tarball: https://registry.npmmirror.com/preact/-/preact-10.18.0.tgz}
+    name: preact
+    version: 10.18.0
+
   registry.npmmirror.com/preferred-pm@3.1.2:
     resolution: {integrity: sha512-nk7dKrcW8hfCZ4H6klWcdRknBOXWzNQByJ0oJyX97BOupsYD+FzLS4hflgEu/uPUEHZCuRfMxzCBsuWd7OzT8Q==, tarball: https://registry.npmmirror.com/preferred-pm/-/preferred-pm-3.1.2.tgz}
     name: preferred-pm
@@ -13528,18 +13529,6 @@ packages:
       minimist: registry.npmmirror.com/minimist@1.2.8
       strip-json-comments: registry.npmmirror.com/strip-json-comments@2.0.1
     dev: true
-
-  registry.npmmirror.com/react-dom@18.2.0(react@18.2.0):
-    resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==, tarball: https://registry.npmmirror.com/react-dom/-/react-dom-18.2.0.tgz}
-    id: registry.npmmirror.com/react-dom/18.2.0
-    name: react-dom
-    version: 18.2.0
-    peerDependencies:
-      react: ^18.2.0
-    dependencies:
-      loose-envify: registry.npmmirror.com/loose-envify@1.4.0
-      react: registry.npmmirror.com/react@18.2.0
-      scheduler: registry.npmmirror.com/scheduler@0.23.0
 
   registry.npmmirror.com/react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==, tarball: https://registry.npmmirror.com/react-is/-/react-is-17.0.2.tgz}
@@ -14109,13 +14098,6 @@ packages:
     dependencies:
       loose-envify: registry.npmmirror.com/loose-envify@1.4.0
     dev: false
-
-  registry.npmmirror.com/scheduler@0.23.0:
-    resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==, tarball: https://registry.npmmirror.com/scheduler/-/scheduler-0.23.0.tgz}
-    name: scheduler
-    version: 0.23.0
-    dependencies:
-      loose-envify: registry.npmmirror.com/loose-envify@1.4.0
 
   registry.npmmirror.com/schema-utils@2.7.1:
     resolution: {integrity: sha512-SHiNtMOUGWBQJwzISiVYKu82GiV4QYGePp3odlY1tuKO7gPtphAT5R/py0fA6xtbgLL/RvtJZnU9b8s0F1q0Xg==, tarball: https://registry.npmmirror.com/schema-utils/-/schema-utils-2.7.1.tgz}
@@ -15952,7 +15934,7 @@ packages:
     version: 2.3.4
     dev: true
 
-  registry.npmmirror.com/vue-loader@15.11.1(css-loader@6.8.1)(lodash@4.17.21)(react-dom@18.2.0)(react@18.2.0)(webpack@5.78.0):
+  registry.npmmirror.com/vue-loader@15.11.1(css-loader@6.8.1)(lodash@4.17.21)(react@18.2.0)(webpack@5.78.0):
     resolution: {integrity: sha512-0iw4VchYLePqJfJu9s62ACWUXeSqM30SQqlIftbYWM3C+jpPcEHKSPUZBLjSF9au4HTHQ/naF6OGnO3Q/qGR3Q==, tarball: https://registry.npmmirror.com/vue-loader/-/vue-loader-15.11.1.tgz}
     id: registry.npmmirror.com/vue-loader/15.11.1
     name: vue-loader
@@ -15974,7 +15956,7 @@ packages:
       vue-template-compiler:
         optional: true
     dependencies:
-      '@vue/component-compiler-utils': registry.npmmirror.com/@vue/component-compiler-utils@3.3.0(lodash@4.17.21)(react-dom@18.2.0)(react@18.2.0)
+      '@vue/component-compiler-utils': registry.npmmirror.com/@vue/component-compiler-utils@3.3.0(lodash@4.17.21)(react@18.2.0)
       css-loader: registry.npmmirror.com/css-loader@6.8.1(webpack@5.78.0)
       hash-sum: registry.npmmirror.com/hash-sum@1.0.2
       loader-utils: registry.npmmirror.com/loader-utils@1.4.2

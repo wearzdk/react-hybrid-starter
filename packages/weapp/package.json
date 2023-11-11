@@ -35,8 +35,9 @@
   ],
   "author": "",
   "dependencies": {
-    "@hybrid/server": "workspace:*",
     "@babel/runtime": "^7.23.2",
+    "@hybrid/server": "workspace:*",
+    "@preact/compat": "^17.1.2",
     "@tarojs/components": "3.6.18",
     "@tarojs/helper": "3.6.18",
     "@tarojs/plugin-framework-react": "^3.6.18",
@@ -46,8 +47,7 @@
     "@tarojs/runtime": "3.6.18",
     "@tarojs/shared": "3.6.18",
     "@tarojs/taro": "3.6.18",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "preact": "10.18.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",
