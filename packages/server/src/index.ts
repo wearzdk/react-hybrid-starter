@@ -37,3 +37,8 @@ app.use(
 console.log('Listening on http://localhost:3000')
 
 app.listen(3000)
+
+// 类型导出
+
+export * from './dao'
+export * from './trpc'

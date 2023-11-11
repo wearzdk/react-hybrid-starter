@@ -4,8 +4,8 @@ import './index.css'
 // import '~wechat/components/checkbox.css'
 import { useEffect, useRef, useState } from 'react'
 import { showModal, showToast } from '@tarojs/taro'
-import type { ITodo } from '~model/dao/todo'
-import { Api } from '~wechat/api/trpc'
+import type { ITodo } from '@hybrid/server'
+import { Api } from '@/api/trpc'
 
 export default function Index() {
   const [todoList, setTodoList] = useState<ITodo[]>([])

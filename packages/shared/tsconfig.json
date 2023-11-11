@@ -1,5 +1,5 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["./hooks", "./components", "../wechat-ui/src/components/header.tsx"],
+  "include": ["./src"],
   "compileOnSave": false
 }

@@ -14,20 +14,6 @@
     "allowImportingTsExtensions": true,
     "baseUrl": ".",
     "rootDir": ".",
-    "paths": {
-      "~wechat/*": [
-        "packages/wechat-ui/src/*"
-      ],
-      "~model/*": [
-        "packages/model/src/*"
-      ],
-      "~shared/*": [
-        "packages/shared/*"
-      ],
-      "~types/*": [
-        "packages/types/*"
-      ]
-    },
     "strict": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,

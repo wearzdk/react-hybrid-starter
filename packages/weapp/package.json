@@ -1,5 +1,5 @@
 {
-  "name": "wechat-ui",
+  "name": "@hybrid/weapp",
   "version": "1.0.0",
   "private": true,
   "description": "",
@@ -35,6 +35,7 @@
   ],
   "author": "",
   "dependencies": {
+    "@hybrid/server": "workspace:*",
     "@babel/runtime": "^7.23.2",
     "@tarojs/components": "3.6.18",
     "@tarojs/helper": "3.6.18",
