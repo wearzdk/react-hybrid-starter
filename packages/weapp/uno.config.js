@@ -1,7 +1,7 @@
 import presetIcons from '@unocss/preset-icons'
-import { defineConfig } from 'unocss'
+import { defineConfig, transformerDirectives } from 'unocss'
 import presetWeapp from 'unocss-preset-weapp'
-import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+import { transformerClass } from 'unocss-preset-weapp/transformer'
 
 // eslint-disable-next-line unused-imports/no-unused-vars
 const themes = {
@@ -31,14 +31,16 @@ const themes = {
   },
 }
 
-// const prefix = 'li-'
-
-const { presetWeappAttributify, transformerAttributify } = extractorAttributify({
-  // classPrefix: prefix,
-})
-
 export default defineConfig({
+
+  content: {
+    pipeline: {
+      include: [/\.([jt]sx|css)($|\?)/],
+      exclude: [],
+    },
+  },
   presets: [
+
     presetWeapp({
       // h5兼容
       // eslint-disable-next-line node/prefer-global/process
@@ -50,12 +52,18 @@ export default defineConfig({
       prefix: 'i-',
     }),
 
-    // presetTheme(themes),
-    presetWeappAttributify(),
   ],
   transformers: [
-    transformerAttributify(),
     transformerClass(),
+    transformerDirectives({
+      enforce: 'pre',
+    }),
+  ],
+  shortcuts: [
+    {
+      'border-base': 'border border-gray-500/10',
+      'center': 'flex justify-center items-center',
+    },
   ],
   theme: {
     colors: {
@@ -73,4 +81,6 @@ export default defineConfig({
       fill3: '#EDEDED',
     },
   },
+  blocklist: [
+  ],
 })

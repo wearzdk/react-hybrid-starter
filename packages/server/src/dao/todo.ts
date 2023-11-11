@@ -17,6 +17,7 @@ const TodoModel = mongoose.model('Todo', todoSchema)
 
 export const TodoRouters = {
   todoList: publicProcedure
+    .input(z.object({}))
     .query<ITodo[]>(async () => {
       const list = await TodoModel.find()
       return list

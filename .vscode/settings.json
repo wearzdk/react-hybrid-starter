@@ -51,5 +51,17 @@
 ],
 
   // ignore css @apply
-  "css.validate": false
+  "css.validate": false,
+  "unocss.root": [
+    "packages/weapp"
+  ],
+  "unocss.exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/public/**",
+    "**/out/**",
+    "**/target/**",
+    "**/vendor/**",
+  ]
 }

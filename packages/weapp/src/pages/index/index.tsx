@@ -12,8 +12,7 @@ export default function Index() {
   // const [loading, setLoading] = useState(false)
 
   const fetchTodoList = async () => {
-    const res = await Api.todoList.query()
-    console.log(res)
+    const res = await Api.todoList.query({})
     setTodoList(res)
   }
 
