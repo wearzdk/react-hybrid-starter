@@ -12,7 +12,7 @@ export default function Index() {
   // const [loading, setLoading] = useState(false)
 
   const fetchTodoList = async () => {
-    const res = await Api.todoList.query({})
+    const res = await Api.todo.todoList.query({})
     setTodoList(res)
   }
 
@@ -43,11 +43,11 @@ export default function Index() {
 
     if (!currentTodo._id) {
       // 新增
-      await Api.todoCreate.mutate({ text: currentTodo.text })
+      await Api.todo.todoCreate.mutate({ text: currentTodo.text })
     }
     else {
       // 编辑
-      await Api.todoUpdate.mutate({ ...currentTodo })
+      await Api.todo.todoUpdate.mutate({ ...currentTodo })
     }
 
     setModalVisible(false)
@@ -64,7 +64,7 @@ export default function Index() {
 
   // toggle
   async function handelToggle(item: ITodo) {
-    await Api.todoUpdate.mutate({ ...item, done: !item.done })
+    await Api.todo.todoUpdate.mutate({ ...item, done: !item.done })
     await fetchTodoList()
   }
 
@@ -76,7 +76,7 @@ export default function Index() {
       content: 'Are you sure to delete this task?',
       success: async (res) => {
         if (res.confirm) {
-          await Api.todoDelete.mutate({ id: item._id })
+          await Api.todo.todoDelete.mutate({ id: item._id })
           await fetchTodoList()
         }
       },
@@ -96,7 +96,7 @@ export default function Index() {
             onInput={(e) => {
               setCurrentTodo({
                 ...currentTodo,
-                text: (e.target as any).value,
+                text: e.detail.value,
               })
             }}
             className="w-full h-200px text-base my-2 p-2 border border-border"

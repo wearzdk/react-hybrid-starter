@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "typecheck": "tsc --noEmit",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tsc": "pnpm --filter @hybrid/server run tsc & pnpm --filter @hybrid/weapp run tsc & pnpm --filter @hybrid/models run tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf node_modules && rm -rf packages/*/node_modules"
   },
   "author": "wearzdk",
   "license": "MIT",
@@ -15,6 +20,7 @@
     "@antfu/eslint-config": "^1.1.0",
     "@types/node": "^18.15.11",
     "eslint": "^8.53.0",
+    "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "typescript": "^5.2.2"
   }

@@ -31,5 +31,9 @@ export async function NativeFetch(input: string, init: any) {
   })
 }
 
+// fetch polyfill
 // eslint-disable-next-line no-restricted-globals
-global.fetch = NativeFetch as any
+if (!global.fetch) {
+  // eslint-disable-next-line no-restricted-globals
+  global.fetch = NativeFetch as any
+}

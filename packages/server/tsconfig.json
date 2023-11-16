@@ -1,5 +1,17 @@
 {
   "extends": "../../tsconfig.node.json",
-  "include": ["./src"],
-  "compileOnSave": false
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+    },
+    "strict": true,
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
+    "composite": true,
+  },
+  "include": ["./src", "../types"],
 }

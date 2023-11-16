@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import { z } from 'zod'
-import { publicProcedure } from '../trpc'
+import { publicProcedure, router } from '@/trpc'
 
 export interface ITodo {
   _id: string
@@ -15,7 +15,7 @@ const todoSchema = new mongoose.Schema<ITodo>({
 
 const TodoModel = mongoose.model('Todo', todoSchema)
 
-export const TodoRouters = {
+export const TodoRouters = router({
   todoList: publicProcedure
     .input(z.object({}))
     .query<ITodo[]>(async () => {
@@ -63,4 +63,4 @@ export const TodoRouters = {
       return 'ok'
     }),
 
-}
+})

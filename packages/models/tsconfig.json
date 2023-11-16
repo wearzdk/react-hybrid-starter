@@ -1,5 +1,11 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "strict": true,
     "target": "ES2020",
     "jsx": "react-jsx",
     "lib": [
@@ -12,9 +18,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
-    "baseUrl": ".",
     "rootDir": ".",
-    "strict": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,
@@ -22,16 +26,13 @@
     "skipDefaultLibCheck": true,
     "noEmit": true,
     "skipLibCheck": true,
-    "paths": {}
   },
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ],
+  "skipLibCheck": true,
+  "include": ["./src","../types"],
   "exclude": [
     "node_modules",
-    "packages/**/node_modules",
-    "packages/**/dist"
-  ]
+    "dist"
+  ],
+  "references": [{"path": "../server"}],
+  "compileOnSave": false
 }

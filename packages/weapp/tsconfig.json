@@ -4,10 +4,34 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "strict": true,
+    "target": "ES2020",
+    "jsx": "react-jsx",
+    "lib": [
+      "ES2020"
+    ],
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "rootDir": ".",
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "skipDefaultLibCheck": true,
+    "noEmit": true,
+    "skipLibCheck": true,
   },
   "skipLibCheck": true,
   
-  "include": ["./src", "./types", "./config"],
+  "include": ["./src", "./types", "./config","../types"],
+  "references": [{"path": "../server"}],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
   "compileOnSave": false
 }
